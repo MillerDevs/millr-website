@@ -8,8 +8,23 @@
     <link rel="stylesheet" href="/css/index_stylesheet.css" />
   </head>
   <body>
-    <header>
-      <div class="logo">
+    <!-- Top Navigation bar -->
+    <!-- Mobile -->
+    <header class="sidebar">
+      <a href="#" onclick="closeSidebar()"
+        ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 -960 960 960"
+          width="24px"
+          fill="#1f1f1f"
+        >
+          <path
+            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+          />
+        </svg>
+      </a>
+      <div class="logo prevent-select">
         <span style="color: red">\</span>millr
         <span style="color: blue; opacity: 50%">\</span
         ><span style="opacity: 50%">home</span>
@@ -21,7 +36,49 @@
           <li><a href="#">about me</a></li>
         </ul>
       </nav>
-      <div class="contact-button"><button>contact</button></div>
     </header>
+
+    <!-- Desktop -->
+    <header>
+      <div class="logo prevent-select">
+        <span style="color: red">\</span>millr
+        <span style="color: blue; opacity: 50%">\</span
+        ><span style="opacity: 50%">home</span>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li class="hideOnMobile"><a href="#">home</a></li>
+          <li class="hideOnMobile"><a href="#">portfolio</a></li>
+          <li class="hideOnMobile"><a href="#">about me</a></li>
+        </ul>
+      </nav>
+      <div class="hideOnDesktop" style="padding: 0%">
+        <a href="#" onclick="showSidebar()"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="50px"
+            viewBox="0 -960 960 960"
+            width="50px"
+            fill="#1f1f1f"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            />
+          </svg>
+        </a>
+      </div>
+    </header>
+    <!-- End -->
+    <script>
+      function showSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "flex";
+      }
+
+      function closeSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
+      }
+    </script>
   </body>
 </html>
