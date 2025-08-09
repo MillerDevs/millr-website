@@ -38,7 +38,8 @@ button {
 /*
 -------- NAV BAR --------
 */
-.nav-links li a {
+.nav-links li a,
+.nav-links-sidebar li a {
   font-size: inherit;
   font-family: "JetBrains Mono", sans-serif;
   font-weight: 500;
@@ -69,6 +70,14 @@ header {
   list-style: none;
 }
 
+.nav-links-sidebar {
+  font-size: clamp(30px, 4vw, 46px);
+  white-space: normal; /* allow wrapping / normal flow */
+  overflow-y: auto; /* scroll if items overflow vertically */
+  overflow-x: visible;
+  list-style: none;
+}
+
 .nav-links li {
   display: inline-block;
   font-size: inherit;
@@ -76,11 +85,13 @@ header {
   padding-right: clamp(10px, 2vw, 50px);
 }
 
-.nav-links li a {
+.nav-links li a,
+.nav-links-sidebar li a {
   transition: all 0.3s ease 0s;
 }
 
-.nav-links li a:hover {
+.nav-links li a:hover,
+.nav-links-sidebar li a:hover {
   color: blue;
 }
 
@@ -102,8 +113,8 @@ header {
 }
 
 .sidebar li,
-a,
-button {
+.sidebar a,
+.sidebar button {
   width: 100%;
   padding: 0px;
 }
